@@ -1,12 +1,10 @@
-import {Blob} from 'buffer';
-
 export const random = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 export const uuid = (len?: number): string => {
     if (URL) {
-        return URL.createObjectURL(new Blob([])).slice(-36).slice(0, len || 8)
+        return URL.createObjectURL(new Blob()).slice(-36).slice(0, len || 8)
     }
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -44,4 +42,20 @@ export const listToTree = (list: any, id = 'id', pid = 'pid', childName = 'child
         }
     }
     return res
+}
+
+export function unique<T>(list: Array<T>, key?: string): Array<T> {
+    if (!Array.isArray(list) || !list.length) return []
+    // if (x) return Array.from(new Set(list))
+    let map = new Map();
+    let array: Array<T> = [];
+    list.forEach((o: any) => {
+        let k = o;
+        if (key) k = o[key]
+        if (!map.has(k)) {
+            map.set(k, true);
+            array.push(o);
+        }
+    })
+    return array;
 }

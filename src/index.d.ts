@@ -1,3 +1,4 @@
+
 declare namespace JLibs {
     /**
      * 生成数字范围内的随机数
@@ -31,6 +32,13 @@ declare namespace JLibs {
      * @returns Array<object>
      */
     export function listToTree(list: Array<object>, id: string, pid: string, childName: string): Array<object>
+
+    /**
+     * 数组去重复
+     * @param list
+     * @param key
+     */
+    export function unique<T>(list: Array<T>, key?: string): Array<T>
 }
 
 declare module 'J-Libs' {
