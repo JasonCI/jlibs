@@ -1,0 +1,50 @@
+{
+  "name": "jlibs",
+  "version": "1.0.0",
+  "description": "工具函数，常用工具集",
+  "main": "dist/jlibs.cjs.js",
+  "module": "dist/jlibs.esm.js",
+  "browser": "dist/jlibs.umd.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src",
+    "dist/*.js"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "githttps://github.com/JasonCI/jlibs.git"
+  },
+  "keywords": [
+    "tools",
+    "utils",
+    "libs",
+    "常用",
+    "函数",
+    "js",
+    "ts"
+  ],
+  "author": "jasonci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JasonCI/jlibs/issues"
+  },
+  "homepage": "https://github.com/JasonCI/jlibs#readme",
+  "dependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "rollup": "^2.70.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3"
+  }
+}
